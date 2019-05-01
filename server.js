@@ -4,9 +4,15 @@ const path = require('path');
 const app = express();
 
 app.use(express.static(path.join(__dirname, '/assets')));
+app.use(express.static(path.join(__dirname, '/client/build')));
+
 app.get('/api/getMeme', (req, res) => {
   console.log("Sending meme!");
   res.send("meme2.png");
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 const port = process.env.PORT || 5000;
