@@ -9,7 +9,6 @@ const withTimer = timerProps => WrappedComponent => wrappedComponentProps => (
     </Timer>
   );
 
-
 class CustomTimer extends Component {
   constructor(props) {
     super(props);
@@ -18,13 +17,27 @@ class CustomTimer extends Component {
     };
   }
 
+  componentDidUpdate() {
+    const { setTime, start} = this.props.timer;
+    if (this.props.timeInterval !== this.state.timeInterval) {
+      this.setState({
+        timeInterval: this.props.timeInterval
+      }, function redo(){
+        setTime(this.state.timeInterval);
+        start();
+      })
+    }
+  }
+
   componentDidMount() {
-    const { setCheckpoints, setTime, getTime} = this.props.timer;
+    const { setCheckpoints, setTime} = this.props.timer;
     setTime(this.state.timeInterval);
     setCheckpoints([
       {
         time: 0,
-        callback: () => setTime(this.state.timeInterval),
+        callback: () => {
+          this.props.startNewRound();
+        }
       }
     ]);
   }
@@ -43,6 +56,7 @@ class CustomTimer extends Component {
   const TimerHOC = withTimer({
     direction: 'backward',
     initialTime: 0,
+    startImmediately: true
   })(CustomTimer);
 
   export default TimerHOC;

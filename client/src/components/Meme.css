@@ -1,6 +1,7 @@
 .MemePhoto {
   vertical-align: top;
   display: inline-block;
+  object-fit: cover;
   width: 552px;
   height: 414px;
   margin-bottom: 15px;

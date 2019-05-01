@@ -16,6 +16,11 @@ class Meme extends Component {
     this.fetchImage();
   }
 
+  startNewRound() {
+    console.log("heree")
+    this.fetchImage();
+  }
+
   fetchImage() {
     fetch('/api/getMeme')
     .then((res) => res.json())
@@ -28,18 +33,17 @@ class Meme extends Component {
     });
   }
 
-  startNewRound() {
-    console.log("new round");
-  }
 
   render() {
+    console.log(this.state.remainingTime)
     if (this.state.remainingTime !== 0) {
       return (
         <div className="MemeContainer">
-          <img className="MemePhoto" src={this.state.imageName}/>
+          <img alt="meme" className="MemePhoto" src={this.state.imageName}/>
 
           <h5 className="TimeCaption"> Time Remaining in Round </h5>
-          <Timer timeInterval={this.state.remainingTime}/>
+          <Timer timeInterval={this.state.remainingTime}
+          startNewRound={this.startNewRound.bind(this)}/>
         </div>
       );
     } else {
