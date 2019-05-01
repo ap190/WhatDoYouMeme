@@ -20,7 +20,10 @@ class CustomTimer extends Component {
 
   componentDidMount() {
     const { setCheckpoints, setTime, getTime} = this.props.timer;
-    const time = localStorage.getItem('timeBeforeUnmount');
+    var time = localStorage.getItem('timeBeforeUnmount');
+    if (time <= 0) {
+      time = this.state.timeInterval;
+    }
     setTime(time);
     setInterval(() => {
       localStorage.setItem("timeBeforeUnmount", getTime());
