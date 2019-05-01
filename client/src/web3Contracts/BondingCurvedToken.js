@@ -487,5 +487,8 @@ const abi = [
 	}
 ]
 
-var BondingCurvedToken = new web3.eth.Contract(abi);
+var BondingCurvedToken = "undefined";
+if (web3 !== "undefined") {
+	BondingCurvedToken = new web3.eth.Contract(abi);
+}
 export default BondingCurvedToken;

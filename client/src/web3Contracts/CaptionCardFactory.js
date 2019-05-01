@@ -82,5 +82,8 @@ const abi = [
 	}
 ]
 
-var CaptionCardFactory = new web3.eth.Contract(abi, address);
+var CaptionCardFactory  = "undefined";
+if (web3 !== "undefined") {
+	CaptionCardFactory = new web3.eth.Contract(abi, address);
+}
 export default CaptionCardFactory;

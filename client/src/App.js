@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import './App.css';
 import web3 from './web3'
-const account = "0xCd626bc764E1d553e0D75a42f5c4156B91a63F23";
 
 class App extends Component {
   constructor(props) {
@@ -19,24 +18,21 @@ class App extends Component {
       isOnRopsten: false,
       account: ""
     }
-    this.isMetamaskInstalled()
-    this.listenForAccountChange()
+    if (web3 !== "undefined") {
+      this.isMetamaskInstalled()
+      this.listenForAccountChange()
+    }
   }
 
   async isMetamaskInstalled() {
-    if (typeof web3 !== 'undefined'){
-      const accounts = await web3.eth.getAccounts();
-      var networkId = await web3.eth.net.getId();
-      this.setState({
-        hasMetamask: true,
-        isLoggedIn: accounts.length > 0,
-        isOnRopsten: networkId === 3,
-        account: accounts[0]
-      });
-   }
-   else{
-      this.setState({hasMetamask: false});
-   }
+    const accounts = await web3.eth.getAccounts();
+    var networkId = await web3.eth.net.getId();
+    this.setState({
+      hasMetamask: true,
+      isLoggedIn: accounts.length > 0,
+      isOnRopsten: networkId === 3,
+      account: accounts[0]
+    });
   }
 
   listenForAccountChange() {
@@ -50,6 +46,7 @@ class App extends Component {
   }
 
   renderHeaderAlert() {
+    console.log("here")
     var displayMessage = "";
     if (!this.state.hasMetamask) {
       displayMessage = "Install Metamask to interact with this site.";

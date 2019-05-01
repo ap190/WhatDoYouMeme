@@ -507,5 +507,8 @@ const abi = [
 	}
 ]
 
-var CaptionCard = new web3.eth.Contract(abi);
+var CaptionCard = "undefined";
+if (web3 !== "undefined") {
+	CaptionCard = new web3.eth.Contract(abi);
+}
 export default CaptionCard;
