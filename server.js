@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path');
 const database = require('./simpleDB.js');
+var fs = require('fs');
 const app = express();
 
-const ROUND_TIME = 1.8 * Math.pow(10,7);
+const ROUND_TIME = 1.8 * Math.pow(10,7); // in milliseconds
 
 
 app.use(express.static(path.join(__dirname, '/assets')));
@@ -13,8 +14,16 @@ database.storeData("meme2.png", 1556729616319);
 
 function calculateRemainingTime(timestamp) {
   const newDate = new Date();
-  return ROUND_TIME - (newDate.getTime() - 1556729616319);
+  return ROUND_TIME - (newDate.getTime() - timestamp);
 }
+
+function pushNewRound() {
+  var files = fs.readdirSync(path.join(__dirname, '/assets'));
+  var randomFileIndex = Math.floor(Math.random() * files.length);
+  const currDate = new Date();
+  database.storeData(files[randomFileIndex], currDate.getTime());
+}
+setInterval(pushNewRound, ROUND_TIME);
 
 app.get('/api/getMeme', (req, res) => {
   console.log("Sending meme!");
