@@ -9,22 +9,24 @@ class Meme extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      didFetchImage: false
+      didFetchImage: false,
+      remainingTime: 0
     };
   }
 
   componentDidMount() {
     this.fetchImage();
+    this.calculateRemainingTime();
   }
 
   fetchImage() {
     fetch('/api/getMeme')
-    .then((res) => res.text())
-    .then(imageName => {
-      console.log(imageName)
+    .then((res) => res.json())
+    .then(data => {
       this.setState({
         didFetchImage: true,
-        imageName: imageName
+        imageName: data.image,
+        remainingTime: this.calculateRemainingTime(data.timestamp)
       });
     });
   }
@@ -33,13 +35,18 @@ class Meme extends Component {
     console.log("new round");
   }
 
+  calculateRemainingTime() {
+    const newDate = new Date();
+    return ROUND_TIME - (newDate.getTime() - 1556729616319);
+  }
+
   render() {
     return (
       <div className="MemeContainer">
         <img className="MemePhoto" src={this.state.imageName}/>
 
         <h5 className="TimeCaption"> Time Remaining in Round </h5>
-        <Timer timeInterval={ROUND_TIME}/>
+        <Timer timeInterval={this.state.remainingTime}/>
       </div>
     );
   }

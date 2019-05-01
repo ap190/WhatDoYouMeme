@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, '/client/build')));
 
 app.get('/api/getMeme', (req, res) => {
   console.log("Sending meme!");
-  res.send("meme2.png");
+  res.send({image: "meme2.png", timestamp: 1556729616319});
 });
 
 app.get('*', (req, res) => {
