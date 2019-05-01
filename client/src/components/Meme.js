@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Timer from './Timer';
 import './Meme.css';
 
-const ROUND_TIME = 1.8 * Math.pow(10,7);
-
 class Meme extends Component {
 
   constructor(props) {
@@ -16,7 +14,6 @@ class Meme extends Component {
 
   componentDidMount() {
     this.fetchImage();
-    this.calculateRemainingTime();
   }
 
   fetchImage() {
@@ -26,7 +23,7 @@ class Meme extends Component {
       this.setState({
         didFetchImage: true,
         imageName: data.image,
-        remainingTime: this.calculateRemainingTime(data.timestamp)
+        remainingTime: data.timestamp
       });
     });
   }
@@ -35,20 +32,20 @@ class Meme extends Component {
     console.log("new round");
   }
 
-  calculateRemainingTime() {
-    const newDate = new Date();
-    return ROUND_TIME - (newDate.getTime() - 1556729616319);
-  }
-
   render() {
-    return (
-      <div className="MemeContainer">
-        <img className="MemePhoto" src={this.state.imageName}/>
+    if (this.state.remainingTime !== 0) {
+      return (
+        <div className="MemeContainer">
+          <img className="MemePhoto" src={this.state.imageName}/>
 
-        <h5 className="TimeCaption"> Time Remaining in Round </h5>
-        <Timer timeInterval={this.state.remainingTime}/>
-      </div>
-    );
+          <h5 className="TimeCaption"> Time Remaining in Round </h5>
+          <Timer timeInterval={this.state.remainingTime}/>
+        </div>
+      );
+    } else {
+      return null;
+    }
+
   }
 }
 

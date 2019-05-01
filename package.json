@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ap190/WhatDoYouMeme#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "node-persist": "^3.0.4"
   }
 }
