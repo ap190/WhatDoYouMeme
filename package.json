@@ -1,0 +1,45 @@
+{
+  "name": "whatdoyoumeme",
+  "version": "1.0.0",
+  "description": "A game of What Do You Meme on the blockchain",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.15.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "ganache-cli": "^6.4.2",
+    "openzeppelin-solidity": "^2.2.0",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
+    "react-compound-timer": "^1.0.13",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "truffle": "^5.0.12",
+    "truffle-flattener": "^1.3.0",
+    "web3": "^1.0.0-beta.52"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "author": "ap190",
+  "license": "ISC",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

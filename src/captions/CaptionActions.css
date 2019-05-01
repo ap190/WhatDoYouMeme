@@ -1,0 +1,54 @@
+.CaptionActionsMainContainer {
+  width: 100%;
+  margin: auto;
+  height: 100px;
+  padding: 10px 0px;
+}
+
+.CaptionActionsButton {
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  color: #ad1c87 !important;
+  background: transparent;
+  border: 2px solid #ad1c87 !important;
+  border-radius: 6px;
+}
+
+.CaptionActionsButtonDisabled {
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  color: #bab9b6 !important;
+  background: #fcfbf9;
+  border: 2px solid #bab9b6 !important;
+  border-radius: 6px;
+}
+
+
+.CaptionActionsButton:hover {
+  color: #ffffff !important;
+  background: #681e63;
+  border-color: #ffffff !important;
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+}
+
+.CaptionActionsButton:active {
+  transform: translateY(5px);
+  filter: saturate(150%);
+}
+
+.CaptionActionsButtonBottomMargin {
+  margin-bottom: 5px;
+}

@@ -1,0 +1,11 @@
+.HeaderAlertContainer {
+  padding: 16px;
+  margin-top: 1px;
+  background-color: #ad1c87;
+  color: whitesmoke;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

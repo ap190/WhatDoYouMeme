@@ -1,0 +1,7 @@
+.CaptionListMainContainer {
+  display: inline-block;
+  height: 95vh;
+  padding: 10px;
+  width: 450px;
+  overflow-y: scroll;
+}

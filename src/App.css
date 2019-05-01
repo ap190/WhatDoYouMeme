@@ -1,0 +1,30 @@
+.App {
+  margin-top: 25px;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.nav {
+  background-color:white;
+  font-weight: bolder;
+  box-shadow: 0px 2px 8px -1px #dcdad5;
+}
+
+.blueText {
+  color: #1eb3b1;
+  font-size: 24px;
+}
+
+.purpleText {
+  color: #311f70;
+  font-size: 24px;
+}
+
+.pinkText {
+  color: #ad1c87;
+  font-size: 24px;
+}

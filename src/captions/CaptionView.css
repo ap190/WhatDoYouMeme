@@ -1,0 +1,31 @@
+.CaptionViewMainContainer {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  padding: 25px;
+  width: 370px;
+  border: 1px solid #dcdad5;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px;
+}
+
+.CaptionViewPreviewDetailsRow {
+  display: flex;
+}
+
+.WinnerBanner {
+  position: absolute;
+  background-color: #1eb3b1;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 175px;
+  right: -45px;
+  top: 20px;
+  transform: rotate(45deg);
+  font-size: 16px;
+  margin-top: 16px !important;
+  text-shadow: 1px 1px 1px #000;
+}

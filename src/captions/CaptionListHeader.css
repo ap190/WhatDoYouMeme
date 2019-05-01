@@ -1,0 +1,35 @@
+a {
+  color: whitesmoke !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.CreateCaptionCardButton {
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  color: whitesmoke !important;
+  background: #ad1c87;
+  border: 2px solid #ad1c87 !important;
+  border-radius: 6px;
+}
+
+.CreateCaptionCardButton:hover {
+  color: #ffffff !important;
+  background: #681e63;
+  border-color: #ffffff !important;
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+}
+
+.CreateCaptionCardButton:active {
+  transform: translateY(5px);
+  filter: saturate(150%);
+}

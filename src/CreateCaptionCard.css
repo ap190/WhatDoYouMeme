@@ -1,0 +1,67 @@
+.CardText {
+  margin: auto;
+  background-color: transparent;
+  resize: none;
+  border: none;
+  outline: none;
+  font-size:16px;
+  font-weight: bold;
+  color: whitesmoke;
+  height: 280px;
+  padding: 10px;
+  background-color: #312070;
+  color: whitesmoke;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+	hyphens: auto;
+  text-overflow: ellipsis;
+  padding: 25px 15px;
+  height: 280px;
+  font-weight: 500;
+  border-radius: 15px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  border-bottom: 1em solid transparent;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.CardSubmitContainer {
+  padding-bottom: 25%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.CardSubmitButton, input[type=submit] {
+  height: 40px;
+  line-height: 40px;
+  margin-top: 15px;
+  width: 230px;
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  color: whitesmoke !important;
+  background: #ad1c87;
+  border: 2px solid #ad1c87 !important;
+  border-radius: 6px;
+  -webkit-appearance: none !important;
+}
+
+.CardSubmitButton:hover, input[type=submit]{
+  color: #ffffff !important;
+  background: #681e63;
+  border-color: #ffffff !important;
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+}
+
+.CardSubmitButton:active, input[type=submit]{
+  transform: translateY(5px);
+  filter: saturate(150%);
+}
