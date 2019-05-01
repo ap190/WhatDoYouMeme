@@ -1,0 +1,21 @@
+.MemePhoto {
+  vertical-align: top;
+  display: inline-block;
+  width: 552px;
+  height: 414px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.TimeCaption {
+  margin-top: 15px;
+  color: #9e9a9a;
+  font-weight: bold;
+}
+
+.TimerCountdown {
+  margin-bottom: 15px;
+  color: #888888;
+  font-weight: bold;
+}
