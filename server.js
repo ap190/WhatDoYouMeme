@@ -16,7 +16,7 @@ function calculateRemainingTime(timestamp) {
 }
 
 // Initialize game
-// pushNewRound() 
+// pushNewRound()
 
 function pushNewRound() {
   var files = fs.readdirSync(path.join(__dirname, '/assets'));
@@ -28,7 +28,7 @@ setInterval(pushNewRound, ROUND_TIME);
 
 app.get('/api/getMeme', (req, res) => {
   const data = database.loadData();
-  data.timestamp = calculateRemainingTime(data.timestamp);
+  data.timestamp = 85850996;
   res.send(data);
 });
 
