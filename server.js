@@ -16,7 +16,7 @@ function calculateRemainingTime(timestamp) {
 }
 
 // Initialize game
-pushNewRound()
+// pushNewRound() 
 
 function pushNewRound() {
   var files = fs.readdirSync(path.join(__dirname, '/assets'));
