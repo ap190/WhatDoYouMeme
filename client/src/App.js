@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   async isMetamaskInstalled() {
-    const accounts = await web3.eth.getAccounts();
+    const accounts = await window.ethereum.enable();
     var networkId = await web3.eth.net.getId();
     this.setState({
       hasMetamask: true,
