@@ -17,7 +17,6 @@ class Meme extends Component {
   }
 
   startNewRound() {
-    console.log("heree")
     this.fetchImage();
   }
 

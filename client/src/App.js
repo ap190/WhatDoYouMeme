@@ -46,7 +46,6 @@ class App extends Component {
 
   listenForCaptionCardCreated() {
     CaptionCardFactory.events.CaptionCardCreated().on("data", function(event) {
-      console.log(event.result);
       alert("New caption card created!");
     }).on("error", console.error);
   }

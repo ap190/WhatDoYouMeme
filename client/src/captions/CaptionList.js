@@ -21,6 +21,7 @@ class CaptionList extends Component {
     this.getCaptionCards();
     this.listenForBuy();
     this.listenForSell();
+    this.listenForCaptionCardCreated();
   }
 
   componentDidUpdate() {
@@ -49,6 +50,16 @@ class CaptionList extends Component {
       var updatedTransacts = this.state.pendingTransactions.filter(addr => addr !== event.address);
       this.setState(
         {data: [], pendingTransactions: updatedTransacts},
+        this.getCaptionCards
+      );
+    }.bind(this)).on("error", console.error);
+  }
+
+  listenForCaptionCardCreated() {
+    CaptionCardFactory.events.CaptionCardCreated().on("data", function(event) {
+      // Force reload
+      this.setState(
+        {data: []},
         this.getCaptionCards
       );
     }.bind(this)).on("error", console.error);
