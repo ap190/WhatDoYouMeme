@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap';
 import Home from "./Home";
 import CreateCaptionCard from "./CreateCaptionCard";
+import CaptionCardFactory from './web3Contracts/CaptionCardFactory';
+import CaptionCard from './web3Contracts/CaptionCard';
 import HeaderAlert from './components/HeaderAlert';
 import {
   Link, Switch, BrowserRouter as Router, Route
@@ -21,6 +23,7 @@ class App extends Component {
     if (web3 !== "undefined") {
       this.isMetamaskInstalled()
       this.listenForAccountChange()
+      this.listenForCaptionCardCreated()
     }
   }
 
@@ -41,8 +44,11 @@ class App extends Component {
     }.bind(this))
   }
 
-  callback(newAccount) {
-    this.setState({account: newAccount})
+  listenForCaptionCardCreated() {
+    CaptionCardFactory.events.CaptionCardCreated().on("data", function(event) {
+      console.log(event.result);
+      alert("New caption card created!");
+    }).on("error", console.error);
   }
 
   renderHeaderAlert() {

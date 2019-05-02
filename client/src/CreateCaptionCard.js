@@ -7,7 +7,8 @@ class CreateCaptionCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'Write a funny caption here'
+      value: 'Write a funny caption here',
+      isSubmitable: true
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -15,17 +16,17 @@ class CreateCaptionCard extends Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({
+      value: event.target.value,
+      isSubmitable: event.target.value.trim().length > 0
+    });
   }
 
   async handleSubmit(event) {
-    alert('A new card was submitted: ' + this.state.value);
     const accounts = await web3.eth.getAccounts();
-    console.log(accounts);
-    await CaptionCardFactory.methods.addCaptionCard(this.state.value).send({from: accounts[0]});
+    await CaptionCardFactory.methods.addCaptionCard(this.state.value.trim()).send({from: accounts[0]});
     event.preventDefault();
   }
-
 
   render() {
     return (
@@ -33,7 +34,10 @@ class CreateCaptionCard extends Component {
           <form onSubmit={this.handleSubmit}>
               <textarea className="CardText" value={this.state.value} onChange={this.handleChange} />
           </form>
-        <div className="CardSubmitButton" type="submit" onClick={this.handleSubmit.bind(this)}> Create Card</div>
+          {this.state.isSubmitable ?
+            <div className="CardSubmitButton" type="submit" onClick={this.handleSubmit.bind(this)}> Create Card</div>
+            :   <div className="CardSubmitButtonDisabled"> Create Card</div>
+          }
       </div>
     );
   }

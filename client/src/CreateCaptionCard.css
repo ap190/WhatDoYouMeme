@@ -37,6 +37,21 @@
 }
 
 
+.CardSubmitButtonDisabled {
+  height: 40px;
+  line-height: 40px;
+  margin-top: 15px;
+  width: 230px;
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  color: #bab9b6 !important;
+  background: #fcfbf9;
+  border: 2px solid #bab9b6 !important;
+  border-radius: 6px;
+}
+
 .CardSubmitButton, input[type=submit] {
   height: 40px;
   line-height: 40px;

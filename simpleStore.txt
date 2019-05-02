@@ -1,1 +1,1 @@
-{"image":"meme8.png","timestamp":1556754834074}
+{"image":"meme.jpg","timestamp":1556763178164}
