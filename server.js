@@ -10,13 +10,13 @@ const ROUND_TIME = 8.64 * Math.pow(10,7); // in milliseconds
 app.use(express.static(path.join(__dirname, '/assets')));
 app.use(express.static(path.join(__dirname, '/client/build')));
 
+var remainingTime = ROUND_TIME;
+
 function calculateRemainingTime(timestamp) {
   const newDate = new Date();
-  return ROUND_TIME - (newDate.getTime() - timestamp);
+  remainingTime = ROUND_TIME - (newDate.getTime() - timestamp);
+  return remainingTime;
 }
-
-// Initialize game
-pushNewRound()
 
 function pushNewRound() {
   var files = fs.readdirSync(path.join(__dirname, '/assets'));
@@ -24,7 +24,7 @@ function pushNewRound() {
   const currDate = new Date();
   database.storeData(files[randomFileIndex], currDate.getTime());
 }
-setInterval(pushNewRound, ROUND_TIME);
+setInterval(pushNewRound, remainingTime);
 
 app.get('/api/getMeme', (req, res) => {
   const data = database.loadData();
