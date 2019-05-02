@@ -28,7 +28,7 @@ setInterval(pushNewRound, ROUND_TIME);
 
 app.get('/api/getMeme', (req, res) => {
   const data = database.loadData();
-  data.timestamp = 85850996;
+  data.timestamp = 85700000;
   res.send(data);
 });
 
