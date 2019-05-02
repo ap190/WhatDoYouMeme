@@ -27,8 +27,15 @@ function pushNewRound() {
 setInterval(pushNewRound, remainingTime);
 
 app.get('/api/getMeme', (req, res) => {
-  const data = database.loadData();
+  var data = database.loadData();
   data.timestamp = calculateRemainingTime(data.timestamp);
+
+  if (data.timestamp <= 0) {
+    pushNewRound()
+    data = database.loadData();
+    data.timestamp = calculateRemainingTime(data.timestamp);
+  }
+
   res.send(data);
 });
 
