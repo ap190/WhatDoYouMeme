@@ -56,7 +56,8 @@ class CustomTimer extends Component {
   const TimerHOC = withTimer({
     direction: 'backward',
     initialTime: 0,
-    startImmediately: true
+    startImmediately: true,
+    formatValue: (value) => `${(value < 10 ? `0${value}` : value)}`
   })(CustomTimer);
 
   export default TimerHOC;
