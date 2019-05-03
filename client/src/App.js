@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {Navbar} from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
 import Home from "./Home";
 import CreateCaptionCard from "./CreateCaptionCard";
+import Rules from "./Rules";
 import CaptionCardFactory from './web3Contracts/CaptionCardFactory';
 import CaptionCard from './web3Contracts/CaptionCard';
 import HeaderAlert from './components/HeaderAlert';
@@ -73,11 +74,13 @@ class App extends Component {
               <span className="purpleText">You</span>
               <span className="pinkText">CryptoMeme? </span>
             </Navbar.Brand>
+            <Nav.Link className="link" as={Link} to="/rules">Game Rules</Nav.Link>
           </Navbar>
           {this.state.hasMetamask && this.state.isLoggedIn && this.state.isOnRopsten
             ?
             <Switch>
               <Route path="/create-card/" component={CreateCaptionCard}/>
+              <Route path="/rules/" component={Rules}/>
               <Route
                 path="/*"
                 render={(props) => <Home {...props} account={this.state.account}/>}

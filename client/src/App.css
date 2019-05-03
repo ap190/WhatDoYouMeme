@@ -9,6 +9,7 @@
 }
 
 .nav {
+  justify-content: space-between !important;
   background-color:white;
   font-weight: bolder;
   box-shadow: 0px 2px 8px -1px #dcdad5;
@@ -27,4 +28,8 @@
 .pinkText {
   color: #ad1c87;
   font-size: 24px;
+}
+
+.link {
+  color: #888888 !important;
 }
