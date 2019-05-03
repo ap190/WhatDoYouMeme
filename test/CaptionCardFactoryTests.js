@@ -92,13 +92,4 @@ contract('CaptionCardFactoryTests', async function (accounts) {
       "Account 1 should have 0 of captionCard2"
     );
   });
-
-  it("Test caption collision", async function() {
-    let cap1 = "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-    let cap2 = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-    await factory.addCaptionCard(
-      cap1, {from: accounts[1]});
-    await factory.addCaptionCard(
-      cap2, {from: accounts[1]});
-  });
 })

@@ -1,4 +1,5 @@
-
+// Collapsed file of all contracts auto generated so that they could be deployed
+// using Remix. 
 // File: openzeppelin-solidity/contracts/token/ERC20/IERC20.sol
 
 pragma solidity ^0.5;
