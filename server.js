@@ -4,7 +4,7 @@ const database = require('./simpleDB.js');
 var fs = require('fs');
 const app = express();
 
-const ROUND_TIME = 8.64 * Math.pow(10,7); // in milliseconds
+const ROUND_TIME = 8.64 * Math.pow(10,5); // in milliseconds
 
 
 app.use(express.static(path.join(__dirname, '/assets')));
