@@ -195,5 +195,13 @@ run `npm start`
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 And interact with the site.
 
+### You must have metamask installed, be logged in, grant the app access
+to your accounts, and be on the Ropsten Test Network to use the site.
+If you login, change network, etc refresh the site to get rid of the pink banner
+and access the actual site.
+If you have difficulty accessing the site, it is possible that you have privacy mode
+enabled, to unlock:
+Settings -> security and privacy -> switch off privacy mode 
+
 ### See the live version of the app deployed at:
 https://what-do-you-crypto-meme.herokuapp.com/
