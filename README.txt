@@ -1,4 +1,4 @@
- ______    _______  _______  ______   __   __  _______
+______    _______  _______  ______   __   __  _______
 |    _ |  |       ||   _   ||      | |  |_|  ||       |
 |   | ||  |    ___||  |_|  ||  _    ||       ||    ___|
 |   |_||_ |   |___ |       || | |   ||       ||   |___
@@ -70,8 +70,8 @@ my use case and spent time testing them as well. Something that was particularly
 difficult here was the fact that the OpenZeppelin library referenced in these contracts
 had been updated and significantly changed to the point that the original
 functionality in the contracts I was referencing no longer worked. I had to adapt
- the bonding curve logic to the new library implementation. It was also challenging
- to figure out how to write these tests and how to run them at all.
+the bonding curve logic to the new library implementation. It was also challenging
+to figure out how to write these tests and how to run them at all.
 
 - Then I struggled to understand how to deploy these contracts (especially because
 I wrote them with a lot of inheritance), and where to deploy them to. I did research
@@ -174,7 +174,7 @@ then cd back into WhatDoYouMeme top level directory and run
 
 ## spin up a private blockchain on your computer with ganache
 open a new terminal tab and
-
+run 'export PATH=$(npm bin):$PATH'
 run the command ‘ganache-cli’
 
 Wait till you see ‘Listening on 127.0.0.1:8545’
@@ -189,19 +189,21 @@ running the command 'truffle test' and see that all 10 tests pass
 run `npm start` in the top level directory (WhatDoYouMeme)
 
 ### Then run the front end app in development mode
+open another terminal
 cd into the client directory
+run 'npm install'
 run `npm start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 And interact with the site.
 
-### You must have metamask installed, be logged in, grant the app access
+### Note: You must have metamask installed, be logged in, grant the app access
 to your accounts, and be on the Ropsten Test Network to use the site.
 If you login, change network, etc refresh the site to get rid of the pink banner
 and access the actual site.
 If you have difficulty accessing the site, it is possible that you have privacy mode
 enabled, to unlock:
-Settings -> security and privacy -> switch off privacy mode 
+Settings -> security and privacy -> switch off privacy mode
 
 ### See the live version of the app deployed at:
 https://what-do-you-crypto-meme.herokuapp.com/

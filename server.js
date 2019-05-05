@@ -19,6 +19,7 @@ function calculateRemainingTime(timestamp) {
 }
 
 function pushNewRound() {
+  console.log("pushing new round");
   var files = fs.readdirSync(path.join(__dirname, '/assets'));
   var randomFileIndex = Math.floor(Math.random() * files.length);
   const currDate = new Date();
@@ -28,7 +29,9 @@ setInterval(pushNewRound, remainingTime);
 
 app.get('/api/getMeme', (req, res) => {
   var data = database.loadData();
+  console.log(data.timestamp);
   data.timestamp = calculateRemainingTime(data.timestamp);
+  console.log(data.timestamp);
 
   if (data.timestamp <= 0) {
     pushNewRound()
