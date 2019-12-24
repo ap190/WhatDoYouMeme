@@ -8,13 +8,9 @@ ______    _______  _______  ______   __   __  _______
 
 ================================================================
 
-Login: ap70
-
 ### Project Vision
 ================================================================
-For the purpose of this project, I wanted to implement a fun DApp that would give
-me the opportunity to see how we take the contracts we built in something like
-the CryptoBears project and turn them into a fully functioning DApp. I wanted to
+For the purpose of this project, I wanted to implement a fun DApp. I wanted to
 create a never-ending, public, distributed, blockchain-based game of the card game
 What Do You Meme(https://whatdoyoumeme.com/), where participants compete to create
 the funniest meme by pairing the best Caption Card with the Photo Card in play.
@@ -47,83 +43,6 @@ and those with a good sense of humor who buy into a funny card early on.
 I was inspired by the DApp http://www.cryptoagainsthumanity.net/#/home, and hoped
 that at the end of the project I'd have a fully functioning fun DApp.
 
-### Project Challenges
-================================================================
-- At the beginning of this project, I thought that I was going to reference
-Crypto Against Humanity's repository and contract design decisions while implementing
-my own project. Sadly, as I looked more into that after submitting my proposal,
-I found that the code in their repository didn't work and that I didn't agree
-with many of their design decisions (they implement their cards such that they
-contain a Bonding Curved contract rather then extending one,
-how they stored cards, etc). This definitely
-made my project a much bigger undertaking than I initially anticipated.
-
-- To begin, it was challenging to make design decisions with regards to the contracts
-in the game. I spent a lot of time researching different concepts like Curation Markets,
-TCRs, and Bonding curved tokens. I eventually decided to implement the cards as
-bonding curved tokens, and created a factory contract to create and store the
-Caption Cards.
-
-- I worked off of existing implementations of these contracts that I found on github
-and added citations for them at the top of my cod, but adapted them for
-my use case and spent time testing them as well. Something that was particularly
-difficult here was the fact that the OpenZeppelin library referenced in these contracts
-had been updated and significantly changed to the point that the original
-functionality in the contracts I was referencing no longer worked. I had to adapt
-the bonding curve logic to the new library implementation. It was also challenging
-to figure out how to write these tests and how to run them at all.
-
-- Then I struggled to understand how to deploy these contracts (especially because
-I wrote them with a lot of inheritance), and where to deploy them to. I did research
-and found out about the Ropsten test network which I thought would be a good fit
-for my project so that it could be fully tested before being deployed to the Mainnet.
-Because my contracts used a lot of inheritance I had to collapse them into a single
-file in order to deploy them. I then learned how to use
-remix to deploy these contracts and how to check them on etherscan and
-interact with them from remix. In the process I also learned about MetaMask-
-an extension for accessing Ethereum enabled Dapps in your browser, and set up an
-account to deploy my contracts.
-
-- Next I built a react front end with some dummy data.
-
-- The next challenge was understanding how to interact with these contracts from
-the front end. I read up about web3.js- a collection of libraries which allow
-you to interact with a local or remote Ethereum node. I learned that MetaMask
-injects the Ethereum web3 API into every website's javascript context, so that
-DApps can read from the blockchain. I set up code to interact with the Contracts
-using web3, which was difficult, especially considering the web3 API recently
-changed and many tutorials were no longer relevant.
-
-I set up ways to buy and sell cards from the front end, and a way to read the
-data from the contract card factory (which Caption Cards exist, what is the
-price to buy and sell each one based on the associated bonding curve, how many
-of these cards does the current user own, etc.).
-
-- Next I wanted to set up a way to update the UI to reflect the state of the
-corresponding transactions (whether a card was being bought or sold, or a new card
-was created). I learned about Events and how to listen for them using Web3. I
-also added things in react to enable UI feedback (loading states, alerts, etc),
-and ensured that the UI updated when a state changing event was received
-(buy, sell, new card, etc.).
-
-- Then I also wanted to ensure that the site didn't break if someone without
-MetaMask accessed it, so I added code to ensure that the MetaMask was installed
-on the browser accessing the site, and that the account referenced was currently
-on the ropsten network, and that an account was logged in at all. I added UI
-to relay instructions to guide the user to that state.
-
-- Next, I wanted to add a way to allow a user to switch accounts and to have the
-the UI update to reflect the balance of the current user, this was also difficult
-because Metamask's implementation recently changed so finding updated documentation
-of how to do this was difficult.
-
-- Finally, I spent a significant amount of time working on the app itself, in
-terms of building a responsive front end in react, building a node server to
-handle randomly choosing a meme from assets, handling updating the round time
-and keeping it universally the same for all users, and handling various other
-additional aspects of building a fully functional web app. I also figured out
-how to deploy this app to heroku, which I had never done before this project.
-
 ### Project Takeaways
 ================================================================
 All in all, I learned so much building this somewhat distributed DApp, which
@@ -152,7 +71,7 @@ Caption Card, etc) I think this was a good first DApp, and I'm looking to buildi
 more in the future.
 
 
-### Instructions of how to run deliverables
+### Instructions of how to run 
 ================================================================
 
 ### Solidity Contracts and Tests ###
